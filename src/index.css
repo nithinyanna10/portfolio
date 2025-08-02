@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-900 text-white font-sans;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-card {
+    @apply glass rounded-xl p-6 shadow-xl;
+  }
+  
+  .neon-border {
+    @apply border border-cyan-400/50 shadow-lg shadow-cyan-400/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 glass border border-cyan-400/30 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400/10 transition-all duration-300;
+  }
+  
+  .skill-badge {
+    @apply px-3 py-1 bg-gray-800 border border-cyan-400/30 text-cyan-400 text-sm rounded-full hover:bg-cyan-400/10 transition-all duration-300;
+  }
+  
+  .project-card {
+    @apply glass-card hover:scale-105 transition-all duration-500 cursor-pointer;
+  }
+  
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l border-cyan-400/30;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    @apply absolute left-[-8px] top-0 w-4 h-4 bg-cyan-400 rounded-full border-2 border-gray-900;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
