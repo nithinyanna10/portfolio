@@ -9,6 +9,7 @@ import Experience from './pages/Experience';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
+import QuickBuilds from './pages/QuickBuilds';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
@@ -26,6 +27,7 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
+            <Route path="/quick-builds" element={<QuickBuilds />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

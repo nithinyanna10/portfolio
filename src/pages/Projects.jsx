@@ -6,6 +6,15 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Web Monitor RAG - Full-Stack Monitoring Platform",
+      description: "A comprehensive automated pipeline for monitoring, scraping, and analyzing websites using RAG (Retrieval-Augmented Generation), PostgreSQL, ChromaDB, and LLMs. Features 5 mock sites, automated scraping, delta detection, and Streamlit dashboard.",
+      technologies: ["RAG", "PostgreSQL", "ChromaDB", "Streamlit", "Flask", "Gemma", "Ollama", "Automation"],
+      category: "Full-Stack AI",
+      github: "https://github.com/nithinyanna10/web_monitor_rag",
+      live: "#"
+    },
+    {
+      id: 2,
       title: "LLM Agent Evaluation & Reasoning Analyzer",
       description: "Developed an agent-based evaluation framework for Android automation tasks using Gemma 12B via Ollama, with few-shot prompting and self-reflection modules.",
       technologies: ["Gemma 12B", "Ollama", "Chain-of-Thought", "Self-Reflection", "Evaluation Framework"],
@@ -14,7 +23,7 @@ const Projects = () => {
       live: "#"
     },
     {
-      id: 2,
+      id: 3,
       title: "Loan Predictor",
       description: "Achieved 92% accuracy with XGBoost for loan prediction, integrated with FastAPI backend and Streamlit interface for real-time predictions.",
       technologies: ["XGBoost", "FastAPI", "Streamlit", "DagsHub", "Machine Learning"],
@@ -23,7 +32,7 @@ const Projects = () => {
       live: "#"
     },
     {
-      id: 3,
+      id: 4,
       title: "Taxi Demand Prediction",
       description: "Developed ML pipeline for taxi demand prediction using Hopworks Feature Store and MLflow, achieving MAE under 6 rides per hour with LightGBM.",
       technologies: ["LightGBM", "Hopworks", "MLflow", "GitHub Actions", "Streamlit"],
@@ -32,14 +41,59 @@ const Projects = () => {
       live: "#"
     },
     {
-      id: 4,
+      id: 5,
       title: "NYC Taxi Dashboard Analytics",
       description: "End-to-end data analytics pipeline for NYC taxi data using AWS services with automated ETL, optimized querying, and interactive Power BI dashboard.",
       technologies: ["AWS Lambda", "AWS Glue", "Amazon Athena", "Power BI", "Data Analytics"],
       category: "Data Analytics",
       github: "https://github.com/nithinyanna10/etl_pipeline",
       live: "#"
-    }
+    },
+    {
+      id: 6,
+      title: "Smart DetectionOps - Video Analytics Platform",
+      description: "A modular, end-to-end video analytics platform for real-time object detection, tracking, depth estimation, and congestion analysis in retail environments.",
+      technologies: ["YOLOv8", "DeepSORT", "MiDaS", "FastAPI", "Streamlit", "Computer Vision", "Retail Analytics"],
+      category: "Computer Vision",
+      github: "https://github.com/nithinyanna10/detection_ops",
+      live: "#"
+    },
+    {
+      id: 7,
+      title: "Debt Call Analysis Dashboard",
+      description: "A Streamlit dashboard for analyzing and predicting outcomes of debt collection calls using machine learning and NLP with sentiment analysis.",
+      technologies: ["NLP", "Sentiment Analysis", "Machine Learning", "Streamlit", "Feature Engineering", "Predictive Analytics"],
+      category: "NLP Application",
+      github: "https://github.com/nithinyanna10/debt_call_analysis_dashboard",
+      live: "https://nithinyanna10-debt-call-analysis-dashboard-dashboardapp-jdhiaw.streamlit.app/"
+    },
+    {
+      id: 8,
+      title: "Impostor Hunt - Fake Text Detection",
+      description: "Advanced fake text detection challenge solution using multiple models including CatBoost and BERT for improved accuracy in text classification.",
+      technologies: ["BERT", "CatBoost", "NLP", "Text Classification", "Machine Learning", "Ensemble Methods"],
+      category: "NLP Research",
+      github: "https://github.com/nithinyanna10/impostor_hunt_project",
+      live: "#"
+    },
+                    {
+                  id: 9,
+                  title: "3D Video Diffusion - AI Image/Video Generation",
+                  description: "Advanced diffusion model implementation for generating images and videos using 3D-aware techniques. Features FSDP training, custom kernels, and comprehensive model architecture.",
+                  technologies: ["Diffusion Models", "3D Vision", "PyTorch", "FSDP", "Custom Kernels", "AI Generation", "Computer Vision"],
+                  category: "AI Generation",
+                  github: "https://github.com/nithinyanna10/3d-video-diffusion",
+                  live: "#"
+                },
+                {
+                  id: 10,
+                  title: "Cryptocurrency TradeBots - ML Trading System",
+                  description: "Advanced cryptocurrency trading system with real-time data processing, ML predictions, and automated trading bots. Features Docker orchestration, 12 trained models, and comprehensive technical analysis.",
+                  technologies: ["Machine Learning", "Docker", "Real-time Data", "Technical Analysis", "Streamlit", "Cron Jobs", "Trading Bots"],
+                  category: "ML Trading",
+                  github: "https://github.com/nithinyanna10/crypto",
+                  live: "#"
+                }
   ];
 
   return (

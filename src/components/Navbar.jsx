@@ -22,6 +22,7 @@ const Navbar = () => {
     { path: '/experience', label: 'Experience' },
     { path: '/skills', label: 'Skills' },
     { path: '/projects', label: 'Projects' },
+    { path: '/quick-builds', label: 'Quick Builds' },
     { path: '/resume', label: 'Resume' },
     { path: '/contact', label: 'Contact' },
   ];
