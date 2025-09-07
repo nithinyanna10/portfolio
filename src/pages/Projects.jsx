@@ -93,6 +93,24 @@ const Projects = () => {
                   category: "ML Trading",
                   github: "https://github.com/nithinyanna10/crypto",
                   live: "#"
+                },
+                {
+                  id: 11,
+                  title: "Medical Vision Transformer - Pneumonia Detection",
+                  description: "State-of-the-art Vision Transformer model for detecting pneumonia in chest X-ray images, achieving 91.10% test accuracy and 97.14% AUC. Features advanced XAI, MLOps pipeline, and production-ready deployment.",
+                  technologies: ["Vision Transformers", "PyTorch", "Medical AI", "XAI", "MLOps", "Streamlit", "FastAPI", "Docker", "Grad-CAM"],
+                  category: "Medical AI",
+                  github: "https://github.com/nithinyanna10/vision_transformers",
+                  live: "#"
+                },
+                {
+                  id: 12,
+                  title: "NYC Traffic Analytics - Real-time AI Monitoring",
+                  description: "Comprehensive real-time traffic monitoring system combining computer vision, AI detection, and data analytics. Features live video processing, YOLOv8 integration, and interactive dashboards with Kafka streaming.",
+                  technologies: ["YOLOv8", "Computer Vision", "Real-time Analytics", "Kafka", "PostgreSQL", "Streamlit", "Docker", "OpenCV", "Object Detection"],
+                  category: "Computer Vision",
+                  github: "https://github.com/nithinyanna10/traffic_nyc",
+                  live: "#"
                 }
   ];
 
