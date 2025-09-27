@@ -10,6 +10,8 @@ import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import QuickBuilds from './pages/QuickBuilds';
+import GravityMaze from './pages/GravityMaze';
+import AdminAnalytics from './pages/AdminAnalytics';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
@@ -28,6 +30,8 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/quick-builds" element={<QuickBuilds />} />
+            <Route path="/gravity-maze" element={<GravityMaze />} />
+            <Route path="/admin-analytics" element={<AdminAnalytics />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
