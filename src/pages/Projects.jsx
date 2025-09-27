@@ -111,6 +111,15 @@ const Projects = () => {
                   category: "Computer Vision",
                   github: "https://github.com/nithinyanna10/traffic_nyc",
                   live: "#"
+                },
+                {
+                  id: 13,
+                  title: "AI Meme Generator - Viral Content Creator",
+                  description: "A fun and interactive web application that generates viral memes from trending topics using AI! Combines trending data from Reddit, AI image generation with Stable Diffusion, and smart caption generation to create shareable memes.",
+                  technologies: ["Streamlit", "Stable Diffusion", "Hugging Face", "Reddit API", "Python", "AI Generation", "Web Scraping", "Image Processing"],
+                  category: "AI Application",
+                  github: "https://github.com/nithinyanna10/ai_meme_generator",
+                  live: "#"
                 }
   ];
 

@@ -1,7 +1,59 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone, FaSpinner, FaCheck, FaExclamationTriangle } from 'react-icons/fa';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Using your actual Formspree endpoint
+      const response = await fetch('https://formspree.io/f/xrbyearj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New message from ${formData.name} via Portfolio Contact Form`,
+          _replyto: formData.email
+        })
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        console.log('Email sent successfully!');
+      } else {
+        throw new Error('Form submission failed');
+      }
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className="min-h-screen pt-20 px-4 bg-black">
       <div className="max-w-4xl mx-auto">
@@ -28,11 +80,39 @@ const Contact = () => {
             className="glass-card"
           >
             <h2 className="text-2xl font-bold mb-6 text-cyan-400">Send Message</h2>
-            <form className="space-y-4">
+            
+            {/* Success/Error Messages */}
+            {submitStatus === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center space-x-2"
+              >
+                <FaCheck className="text-green-400" />
+                <span className="text-green-400">Message sent successfully!</span>
+              </motion.div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="mb-4 p-4 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center space-x-2"
+              >
+                <FaExclamationTriangle className="text-red-400" />
+                <span className="text-red-400">Failed to send message. Please try again.</span>
+              </motion.div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-gray-300 mb-2">Name</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-gray-800 border border-cyan-400/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
                   placeholder="Your name"
                 />
@@ -41,6 +121,10 @@ const Contact = () => {
                 <label className="block text-gray-300 mb-2">Email</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-gray-800 border border-cyan-400/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
                   placeholder="your.email@example.com"
                 />
@@ -48,17 +132,32 @@ const Contact = () => {
               <div>
                 <label className="block text-gray-300 mb-2">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   rows="4"
                   className="w-full bg-gray-800 border border-cyan-400/30 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-400"
                   placeholder="Your message..."
                 />
               </div>
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-full btn-primary"
+                type="submit"
+                disabled={isSubmitting}
+                whileHover={!isSubmitting ? { scale: 1.05 } : {}}
+                whileTap={!isSubmitting ? { scale: 0.95 } : {}}
+                className={`w-full btn-primary flex items-center justify-center space-x-2 ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
               >
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <FaSpinner className="animate-spin" />
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <span>Send Message</span>
+                )}
               </motion.button>
             </form>
           </motion.div>

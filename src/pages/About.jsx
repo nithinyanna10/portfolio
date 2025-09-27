@@ -13,7 +13,17 @@ const About = () => {
       degree: "Bachelors in Computer Science and Engineering",
       school: "Amrita Vishwavidya Peetham",
       year: "Oct 2020 - Apr 2024",
-      description: "Computer Science and Engineering with focus on software development and algorithms"
+      description: "Computer Science and Engineering with focus on software development and algorithms",
+      research: {
+        title: "Optimizing Energy Usage and Data Storage in Industrial IoT Settings Through Heuristic-Based Data-Rate Processors",
+        publisher: "IEEE",
+        conference: "2024 IEEE International Conference for Women in Innovation, Technology & Entrepreneurship (ICWITE)",
+        doi: "10.1109/ICWITE59797.2024.10502760",
+        link: "https://ieeexplore.ieee.org/document/10502760",
+        authors: "B. Bharathi Kannan; Srinivasan Sriramulu; Vidhya Gopal; M Karthick; Yanna Nithin Reddy; B Natarajan",
+        date: "February 2024",
+        location: "Bangalore, India"
+      }
     }
   ];
 
@@ -172,7 +182,48 @@ const About = () => {
                       <h3 className="text-xl font-bold text-white mb-2">{edu.degree}</h3>
                       <p className="bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300 bg-clip-text text-transparent font-semibold mb-2">{edu.school}</p>
                       <p className="text-gray-400 text-sm mb-3">{edu.year}</p>
-                      <p className="text-gray-300">{edu.description}</p>
+                      <p className="text-gray-300 mb-4">{edu.description}</p>
+                      
+                      {/* Research Publication */}
+                      {edu.research && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 0.8 + index * 0.2 + 0.3 }}
+                          className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-400/30 rounded-lg p-4 mt-4"
+                        >
+                          <div className="flex items-start space-x-3">
+                            <div className="flex-shrink-0">
+                              <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                                <span className="text-white text-sm font-bold">📄</span>
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-lg font-bold text-white mb-2">Published Research</h4>
+                              <p className="text-sm text-gray-300 mb-2 font-medium">{edu.research.title}</p>
+                              <div className="space-y-1 text-xs text-gray-400">
+                                <p><span className="text-purple-400 font-semibold">Publisher:</span> {edu.research.publisher}</p>
+                                <p><span className="text-purple-400 font-semibold">Conference:</span> {edu.research.conference}</p>
+                                <p><span className="text-purple-400 font-semibold">Date:</span> {edu.research.date}</p>
+                                <p><span className="text-purple-400 font-semibold">Location:</span> {edu.research.location}</p>
+                                <p><span className="text-purple-400 font-semibold">DOI:</span> {edu.research.doi}</p>
+                              </div>
+                              <motion.a
+                                href={edu.research.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                className="inline-flex items-center mt-3 text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors duration-300"
+                              >
+                                <span>View on IEEE Xplore</span>
+                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                              </motion.a>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
                     </div>
                   </div>
                 </motion.div>

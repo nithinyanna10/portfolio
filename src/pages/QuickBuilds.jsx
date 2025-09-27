@@ -103,6 +103,20 @@ const QuickBuilds = () => {
       features: ["Parallel scraping", "NLP analysis", "Content summarization", "Keyword extraction"],
       complexity: "Quick Build",
       timeToBuild: "3-4 days"
+    },
+    {
+      id: 8,
+      title: "SHA-256 Visualizer",
+      description: "Interactive educational tool that visualizes the SHA-256 hashing algorithm step-by-step with animated visualizations and real-time controls.",
+      technologies: ["Flask", "JavaScript", "GSAP", "Cryptography", "Educational Tool", "Web Visualization"],
+      category: "Educational Tool",
+      github: "https://github.com/nithinyanna10/SHA_256",
+      live: "#",
+      icon: <FaCode />,
+      color: "from-purple-500 to-indigo-500",
+      features: ["Step-by-step visualization", "Binary representations", "Animated operations", "Educational interface"],
+      complexity: "Quick Build",
+      timeToBuild: "2-3 days"
     }
   ];
 
