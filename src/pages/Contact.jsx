@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone, FaSpinner, FaCheck, FaExclamationTriangle } from 'react-icons/fa';
+import Background from '../components/Background';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -55,8 +56,9 @@ const Contact = () => {
     }
   };
   return (
-    <div className="min-h-screen pt-20 px-4 bg-black">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen pt-20 px-4 bg-black relative overflow-hidden">
+      <Background />
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

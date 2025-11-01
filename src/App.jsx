@@ -12,7 +12,7 @@ import ProjectDetail from './pages/ProjectDetail';
 import QuickBuilds from './pages/QuickBuilds';
 import GravityMaze from './pages/GravityMaze';
 import AdminAnalytics from './pages/AdminAnalytics';
-import Resume from './pages/Resume';
+import Certifications from './pages/Certifications';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 
@@ -32,7 +32,7 @@ function App() {
             <Route path="/quick-builds" element={<QuickBuilds />} />
             <Route path="/gravity-maze" element={<GravityMaze />} />
             <Route path="/admin-analytics" element={<AdminAnalytics />} />
-            <Route path="/resume" element={<Resume />} />
+            <Route path="/certifications" element={<Certifications />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

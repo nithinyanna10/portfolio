@@ -23,7 +23,7 @@ const Navbar = () => {
     { path: '/skills', label: 'Skills' },
     { path: '/projects', label: 'Projects' },
     { path: '/quick-builds', label: 'Quick Builds' },
-    { path: '/resume', label: 'Resume' },
+    { path: '/certifications', label: 'Certifications' },
     { path: '/contact', label: 'Contact' },
   ];
 

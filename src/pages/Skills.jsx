@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Background from '../components/Background';
 
 const Skills = () => {
   const skillCategories = {
@@ -10,8 +11,9 @@ const Skills = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 px-4 bg-black">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen pt-20 px-4 relative overflow-hidden bg-black">
+      <Background />
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

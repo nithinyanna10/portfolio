@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaCode, FaBrain, FaRocket } from 'react-icons/fa';
+import Background from '../components/Background';
 
 const About = () => {
   const education = [
@@ -35,8 +36,9 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 px-4 bg-black">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen pt-20 px-4 relative overflow-hidden bg-black">
+      <Background />
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
