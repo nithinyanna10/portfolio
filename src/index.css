@@ -9,7 +9,18 @@
   }
   
   body {
-    @apply bg-gray-900 text-white font-sans;
+    @apply bg-[#0d1117] text-white font-sans;
+    line-height: 1.6;
+  }
+
+  /* Improved Typography */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    line-height: 1.6;
   }
 }
 
@@ -20,6 +31,9 @@
   
   .glass-card {
     @apply glass rounded-xl p-6 shadow-xl;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
   
   .neon-border {
@@ -68,4 +82,55 @@
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
   }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Parallax and 3D Effects */
+@keyframes starfield {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+.starfield-animation {
+  animation: starfield 20s ease-in-out infinite;
+}
+
+@keyframes nebula-pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+/* Smooth scroll behavior for parallax */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3D Transform Support */
+* {
+  transform-style: preserve-3d;
+}
+
+/* Performance optimizations */
+.glass-card,
+.project-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
