@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaEye, FaCode, FaRocket, FaBrain, FaChartLine, FaShieldAlt, FaLink, FaCamera, FaGlobe } from 'react-icons/fa';
+import Background from '../components/Background';
 
 const QuickBuilds = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -143,8 +144,9 @@ const QuickBuilds = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 px-4 bg-black">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen pt-20 px-4 bg-black relative overflow-hidden">
+      <Background />
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}

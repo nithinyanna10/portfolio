@@ -1,0 +1,26 @@
+/* Premium Gradient Classes for Category Sections */
+
+.bg-gradient-cv {
+  background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), rgba(15,23,42,0.6) 60%);
+}
+
+.bg-gradient-rl {
+  background: radial-gradient(circle at 80% 20%, rgba(16,185,129,0.25), rgba(15,23,42,0.6) 60%);
+}
+
+.bg-gradient-ai {
+  background: radial-gradient(circle at 20% 80%, rgba(167,139,250,0.25), rgba(15,23,42,0.6) 60%);
+}
+
+.bg-gradient-fs {
+  background: radial-gradient(circle at 80% 80%, rgba(251,191,36,0.25), rgba(15,23,42,0.6) 60%);
+}
+
+/* Global Animated Blur Glow Layer */
+.background-accent-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0));
+  pointer-events: none;
+}
+
